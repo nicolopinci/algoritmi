@@ -45,7 +45,7 @@ void main()
 	{
 		k = Q.dequeue();
 
-		if(k->sotto()->valore <= k)
+		if(k->sotto()->valore <= k->valore)
 		{
 			cout << "La condizione non è stata rispettata." << endl;
 			return;			// Eventualmente potrei svuotare la coda, ma non è richiesto esplicitamente
@@ -58,7 +58,7 @@ void main()
 		nodo temp = k->sotto();
 		while(temp->prox()!=NULL)
 		{
-			if(nodo->prox()->valore<=nodo)
+			if(nodo->prox()->valore<=nodo->valore)
 			{
 				cout << "La condizione non è stata rispettata." << endl;
 				return;
