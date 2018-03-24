@@ -1,0 +1,43 @@
+// Ho ipotizzato di avere un albero generico (come da consegna) i cui nodi sono dotati di due puntatori (sotto, che punta al primo figlio o a NULL, e prox, che punta al "fratello").
+// Q è una coda, inizialmente vuota, su cui è definita la funzione length che ne calcola la lunghezza.
+// nodo è stato definito come un nodo dell'albero:
+//			------- -------- ------
+//		       | sotto | valore | prox |
+//			------- -------- ------
+// Naturalmente prox non può puntare ad un nodo non fratello sullo stesso livello. Per contare i nodi su uno stesso livello viene quindi imposta la condizione if((Q.length() - corr) == 0)
+
+void main()
+{
+	int max = 1;
+	int corr = 0;
+
+	Q.enqueue(radice);
+
+	while(!Q.empty())
+	{
+		k = Q.dequeue();
+		Q.enqueue(k->sotto());
+		++corr;
+		nodo temp = k->sotto();
+		while(temp->prox()!=NULL)
+		{
+			Q.enqueue(temp->prox());
+			temp = temp->prox();
+			++corr;
+		}
+
+		if(temp->prox() == NULL)
+		{
+			if((Q.length() - corr) == 0)
+			{
+			
+				if(corr > max)
+				{
+					max=corr;
+				}
+				corr = 0;
+			}
+		}
+
+	}
+}
